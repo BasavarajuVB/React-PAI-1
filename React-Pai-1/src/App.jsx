@@ -12,7 +12,7 @@ function App() {
   const [showSignUp, setShowSignUp] = useState(false);
 
   useEffect(() => {
-    // Initialize database with sample data
+    // Initialize database with sample data (only once)
     initializeDatabase();
 
     // Listen for authentication state changes
