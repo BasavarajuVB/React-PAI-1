@@ -55,7 +55,6 @@ const PhotoGallery = ({ user, onSignOut }) => {
     return () => unsubscribe();
   }, []);
 
-  // Search functionality with debouncing
   useEffect(() => {
     if (!searchTerm.trim()) {
       setFilteredImages(images);
@@ -74,7 +73,6 @@ const PhotoGallery = ({ user, onSignOut }) => {
     return () => clearTimeout(timeoutId);
   }, [searchTerm, images]);
 
-  // Sort images
   const sortedImages = useCallback(() => {
     return [...filteredImages].sort((a, b) => {
       const comparison = a.title.localeCompare(b.title);
@@ -93,7 +91,6 @@ const PhotoGallery = ({ user, onSignOut }) => {
     if (window.confirm('Are you sure you want to delete this image?')) {
       const result = await deleteImage(imageId);
       if (result.success) {
-        // Close modal if it's open for the deleted image
         if (selectedImage && selectedImage.id === imageId) {
           setSelectedImage(null);
         }

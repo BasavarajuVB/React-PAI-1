@@ -150,7 +150,6 @@ const sampleImages = [
   }
 ];
 
-// Initialize database with sample data (only once)
 let isInitialized = false;
 
 export const initializeDatabase = async () => {
@@ -163,10 +162,8 @@ export const initializeDatabase = async () => {
     const imagesRef = ref(database, 'images');
     const snapshot = await get(imagesRef);
     
-    // Check if database is truly empty (no data at all)
     if (!snapshot.exists()) {
       console.log('Database is empty, adding sample images...');
-      // Add sample images to database
       for (const image of sampleImages) {
         const newImageRef = push(imagesRef);
         await set(newImageRef, {
@@ -185,13 +182,11 @@ export const initializeDatabase = async () => {
   isInitialized = true;
 };
 
-// Function to clear all images (for testing purposes)
 export const clearAllImages = async () => {
   try {
     const imagesRef = ref(database, 'images');
     await remove(imagesRef);
     console.log('All images cleared');
-    // Reset initialization flag so sample images can be added again
     isInitialized = false;
   } catch (error) {
     console.error('Error clearing images:', error);
