@@ -34,8 +34,6 @@ const SignUp = ({ onSignUpSuccess, onSwitchToSignIn }) => {
       setPassword('');
       setConfirmPassword('');
       setError('');
-      // Firebase automatically signs in the user after successful sign up
-      // So we call onSignUpSuccess which will redirect to the gallery
       onSignUpSuccess(result.user);
     } else {
       setError(result.error);
