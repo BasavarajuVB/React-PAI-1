@@ -1,0 +1,143 @@
+.gallery-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+.gallery-header {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.gallery-header h1 {
+  color: #333;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.add-button, .signout-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.add-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.add-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.signout-button {
+  background: #ff6b6b;
+  color: white;
+}
+
+.signout-button:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.gallery-controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.gallery-main {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  min-height: 400px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 18px;
+  color: #666;
+}
+
+.no-images {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 10px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+  
+  .gallery-header h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .header-actions {
+    justify-content: center;
+  }
+  
+  .gallery-controls {
+    justify-content: center;
+  }
+  
+  .gallery-main {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-header {
+    padding: 15px;
+  }
+  
+  .gallery-main {
+    padding: 15px;
+  }
+  
+  .add-button, .signout-button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
